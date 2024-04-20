@@ -1,44 +1,44 @@
-#ifndef OOP_LAB2_STACK_H
-#define OOP_LAB2_STACK_H
+#ifndef OOP_LAB2_QUEUE_H
+#define OOP_LAB2_QUEUE_H
 #include <iostream>
 #include "DoubleLinked.h"
-
 using namespace std;
+
 template <typename T>
-class Stack{
+class Queue{
 private:
     DoubleLinkedList<T> list;
 public:
-    Stack() : list() {};
-    bool isEmpty() const{
-        return list.isEmpty();
-    }
+    Queue() : list() {};
 
-    void Push(const T& value){
+    void Enqueue(const T& value){
         list.insertAtEnd(value);
     }
-    void Pop(){
+
+    void  Dequeue(){
         if(list.isEmpty()){
             throw out_of_range("Stack is empty");
         }
         else{
-            list.removeFromEnd();
+            list.removeFromBeginning();
         }
     }
+
     int Peek(){
         if(list.isEmpty()){
             throw out_of_range("Stack is empty");
         }
         else{
-            return list[Size() - 1];
+            return list[0];
         }
+
     }
-    int Size() const{
-        return list.getSize();
+    bool isEmpty() const{
+        return list.isEmpty();
     }
-    friend ostream& operator<<(ostream& os, Stack<T> &obj) {
+    friend ostream& operator<<(ostream &os, Queue <T> &obj) {
         os << obj.list;
         return os;
     }
 };
-#endif //OOP_LAB2_STACK_H
+#endif //OOP_LAB2_QUEUE_H

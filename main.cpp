@@ -2,6 +2,7 @@
 #include "SinglLinkedList.h"
 #include "DoubleLinked.h"
 #include "Stack.h"
+#include "Queue.h"
 
 void singlylist() {
     SinglLinkedList <int >list;
@@ -101,11 +102,24 @@ void Stacklist(){
     cout<<A.Peek();
 
 }
+void Queuelist(){
+    Queue <int> B;
+    if(B.isEmpty())
+        cout<<"Is empty"<<endl;
+    B.Enqueue(3);
+    B.Enqueue(1);
+    B.Enqueue(8);
+    cout<<B;
+    B.Dequeue();
+    cout<<B;
+    cout<<B.Peek();
+}
 int main() {
 //    cout<<"SinglList"<<endl;
 //    singlylist();
 //    cout<<"DoubleList"<<endl;
 //    doubleLinkList();
-    Stacklist();
+//    Stacklist();
+    Queuelist();
     return 0;
 }

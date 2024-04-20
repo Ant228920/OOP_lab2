@@ -8,4 +8,6 @@ add_executable(oop_lab2 main.cpp
         SinglNode.h
         DoubleLinked.h
         DoubleNode.h
-        Stack.h)
+        Stack.h
+        Queue.h
+        PriorityQueue.h)
