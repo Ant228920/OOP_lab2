@@ -1,6 +1,7 @@
 #include <iostream>
 #include "SinglLinkedList.h"
 #include "DoubleLinked.h"
+#include "Stack.h"
 
 void singlylist() {
     SinglLinkedList <int >list;
@@ -74,10 +75,37 @@ void doubleLinkList() {
     cout << "Does value 56 exist? " << list.search(56) << endl;
     cout << "Size of list: " << list.getSize() << endl;
 }
+void Stacklist(){
+    Stack <int> A;
+    if(A.isEmpty())
+        cout<<"is empty"<<endl;
+    else
+        cout<<"not empty"<<endl;
+//    cout<<A.Peek();
+//    A.Pop();
+    A.Push(1);
+    A.Push(2);
+    A.Push(3);
+    A.Push(12);
+    A.Push(52);
+    A.Push(2);
+    cout<<A;
+    if(A.isEmpty())
+        cout<<"is empty"<<endl;
+    else
+        cout<<"not empty"<<endl;
+    cout<<"Pop"<<endl;
+    A.Pop();
+    cout<<A;
+    cout<<"Peek"<<endl;
+    cout<<A.Peek();
+
+}
 int main() {
-    cout<<"SinglList"<<endl;
-    singlylist();
-    cout<<"DoubleList"<<endl;
-    doubleLinkList();
+//    cout<<"SinglList"<<endl;
+//    singlylist();
+//    cout<<"DoubleList"<<endl;
+//    doubleLinkList();
+    Stacklist();
     return 0;
 }

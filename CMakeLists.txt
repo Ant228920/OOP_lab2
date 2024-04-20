@@ -7,4 +7,5 @@ add_executable(oop_lab2 main.cpp
         SinglLinkedList.h
         SinglNode.h
         DoubleLinked.h
-        DoubleNode.h)
+        DoubleNode.h
+        Stack.h)
