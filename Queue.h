@@ -12,7 +12,7 @@ public:
     Queue() : list() {};
 
     void Enqueue(const T& value){
-        list.insertAtEnd(value);
+        list.insertAtBeginning(value);
     }
 
     void  Dequeue(){
@@ -31,7 +31,6 @@ public:
         else{
             return list[0];
         }
-
     }
     bool isEmpty() const{
         return list.isEmpty();

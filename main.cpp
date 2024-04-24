@@ -3,6 +3,9 @@
 #include "DoubleLinked.h"
 #include "Stack.h"
 #include "Queue.h"
+#include "PriorityQueue.h"
+#include "QueueArray.h"
+#include "StackArray.h"
 
 void singlylist() {
     SinglLinkedList <int >list;
@@ -75,6 +78,8 @@ void doubleLinkList() {
     cout << "Item at position 4: " << list[4] << endl;
     cout << "Does value 56 exist? " << list.search(56) << endl;
     cout << "Size of list: " << list.getSize() << endl;
+    list.bubbleSort();
+    cout<<list;
 }
 void Stacklist(){
     Stack <int> A;
@@ -99,7 +104,7 @@ void Stacklist(){
     A.Pop();
     cout<<A;
     cout<<"Peek"<<endl;
-    cout<<A.Peek();
+    cout<<A.Peek()<<endl;
 
 }
 void Queuelist(){
@@ -112,14 +117,67 @@ void Queuelist(){
     cout<<B;
     B.Dequeue();
     cout<<B;
-    cout<<B.Peek();
+    cout<<B.Peek()<<endl;
+}
+void PriorList(){
+    Priority <int> C;
+//    if (C.isEmpty())
+//        cout<<"Is empty"<<endl;
+    C.insertAtEnd(1);
+    C.insertAtEnd(6);
+    C.insertAtEnd(2);
+    cout<<C;
+//    cout<<C.Peek()<<endl;
+    C.bubleSort();
+    cout<<C;
+   // cout<<C.Getsize();
+}
+void StackArrayy(){
+    StackArray<int>A;
+    if (A.isEmpty())
+        cout<<"Stack is empty"<<endl;
+    A.push(2);
+    A.push(7);
+    A.push(2);
+    A.push(5);
+
+    cout<<A;
+    cout<<"Pop ";
+    A.pop();
+    cout<<A;
+    cout<<"Last element "<<A.peek()<<endl;
+}
+void QueueArrayy(){
+    QueueArray<int>A;
+    if (A.isEmpty())
+        cout<<"Queue is empty"<<endl;
+    A.enqueue(5);
+    A.enqueue(2);
+    A.enqueue(7);
+    cout<<A;
+    if (A.isFull())
+        cout<<"Queue is full"<<endl;
+    else cout<<"Queue isn`t full"<<endl;
+    cout<<"Dequeue"<<endl;
+    A.dequeue();
+    cout<<A;
+    cout<<"First element in queue: "<<A.peek()<<endl;
+
 }
 int main() {
 //    cout<<"SinglList"<<endl;
 //    singlylist();
 //    cout<<"DoubleList"<<endl;
-//    doubleLinkList();
-//    Stacklist();
+    //doubleLinkList();
+    cout<<"Stack"<<endl;
+    Stacklist();
+    cout<<"Queue"<<endl;
     Queuelist();
+    cout<<"Priority queue"<<endl;
+    PriorList();
+    cout<<"StackArray"<<endl;
+    StackArrayy();
+    cout<<"QueueArray"<<endl;
+    QueueArrayy();
     return 0;
 }

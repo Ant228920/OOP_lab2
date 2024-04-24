@@ -1,7 +1,9 @@
 #ifndef OOP_LAB2_DOUBLELINKED_H
 #define OOP_LAB2_DOUBLELINKED_H
 #include "DoubleNode.h"
-#include <ostream>
+#include <iostream>
+#include <memory>
+#include <stdexcept>
 using namespace std;
 
 template<typename T>
@@ -121,6 +123,30 @@ public:
         }
         --size;
     };
+
+    void bubbleSort() {
+        if (!head || !head->next) {
+            return; // List is empty or has only one element, already sorted
+        }
+
+        bool swapped;
+        std::shared_ptr<DoubleNode<T>> current;
+
+        do {
+            swapped = false;
+            current = head;
+            do {
+                if (current->data > current->next->data) {
+                    // Swap values directly in the nodes
+                    T temp = current->data;
+                    current->data = current->next->data;
+                    current->next->data = temp;
+                    swapped = true;
+                }
+                current = current->next;
+            } while (current->next != head);
+        } while (swapped);
+    }
 
     bool search(T value) const{
         shared_ptr<DoubleNode<T>> current = head;
